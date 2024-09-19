@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-full bg-slate-700 flex items-center justify-center">
+    <div class="flex flex-col justify-center items-center p-10 h-full w-96">
+      <h1 class="text-xl font-bold tracking-wider text-indigo-200">
+        Image Detection AI
+      </h1>
+      <div class="h-56 w-56 rounded-2xl bg-black overflow-hidden my-8">
+        <img id="img" alt="Uploaded Image Preview" class="h-full w-full object-cover" />
+      </div>
+      <div
+        class="flex flex-col items-center justify-center bg-blue-400 w-full p-4 rounded-xl"
+      >
+        <h3 class="text-xl text-white">Output Predicted</h3>
+        <div id="output" class="text-white"></div>
+      </div>
+
+      <label
+        class="block mb-2 text-sm font-medium text-gray-200 mt-8"
+        for="uploadedImage"
+        >Upload Image here to detect</label
+      >
+      <input
+        class="block w-full text-sm text-gray-300 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+        id="uploadedImage"
+        type="file"
+        accept="image/*"
+      />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
